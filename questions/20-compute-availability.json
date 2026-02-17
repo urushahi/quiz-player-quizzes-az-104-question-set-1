@@ -1,0 +1,24 @@
+{
+    "id": "az104-compute-availability",
+    "question": "You need to deploy six Azure VMs behind two Azure Load Balancers:\n\n| Load Balancer | SKU | VMs |\n|---|---|---|\n| LB-Internal | Standard | VM1, VM2, VM3 |\n| LB-Public | Basic | VM4, VM5, VM6 |\n\nWhich statement correctly describes the requirements for these VMs?",
+    "options": [
+        {
+            "text": "All six VMs must be in the same availability set, regardless of load balancer SKU.",
+            "correct": false
+        },
+        {
+            "text": "VMs behind LB-Internal (Standard) can be standalone, in availability sets, or in VMSS. VMs behind LB-Public (Basic) must all be in the same virtual network.",
+            "correct": true
+        },
+        {
+            "text": "VMs behind both load balancers must be in the same availability set, but LB-Internal supports up to 5 fault domains while LB-Public supports only 3.",
+            "correct": false
+        },
+        {
+            "text": "VMs behind LB-Internal (Standard) must all be in the same availability zone. VMs behind LB-Public (Basic) can span multiple zones.",
+            "correct": false
+        }
+    ],
+    "explanation": "Azure Load Balancer has different requirements based on SKU:\n\n**Standard Load Balancer (LB-Internal):**\n- Backend pool membership is highly flexible. VMs can be standalone, in different availability sets, or in virtual machine scale sets.\n- Supports zone-redundant configurations.\n- VMs can be in different virtual networks (within the same region or via peering/global VNet support).\n\n**Basic Load Balancer (LB-Public):**\n- Backend pool VMs must be in the **same virtual network**.\n- If VMs are in an availability set or scale set, all VMs in that set must be in the backend pool.\n- Does not support cross-VNet or zone-redundant scenarios.\n\nNeither SKU requires VMs to run the same OS or be in the same resource group. Standard LB removed many of the strict membership constraints found in the Basic SKU.",
+    "category": "Deploy and Manage Azure Compute Resources"
+}

@@ -1,0 +1,21 @@
+{
+    "id": "az104-compute-update-management",
+    "type": "ordering",
+    "question": "You need to configure Azure Update Management to automatically install security updates on a group of Windows Server VMs every Sunday at 2:00 AM. Arrange the steps in the correct order.",
+    "items": [
+        "Review the update assessment for the VMs",
+        "Specify the update classifications and schedule (Sundays, 2:00 AM)",
+        "Create or select a Log Analytics workspace",
+        "Create an update deployment schedule",
+        "Enable Update Management on the VMs"
+    ],
+    "correctOrder": [
+        "Create or select a Log Analytics workspace",
+        "Enable Update Management on the VMs",
+        "Review the update assessment for the VMs",
+        "Create an update deployment schedule",
+        "Specify the update classifications and schedule (Sundays, 2:00 AM)"
+    ],
+    "explanation": "Configuring Azure Update Management follows this sequence:\n\n1. **Create/select Log Analytics workspace** — Update Management requires a workspace to store assessment data and deployment logs\n\n2. **Enable Update Management on VMs** — Onboard the VMs to Update Management, which installs the necessary agents and begins data collection\n\n3. **Review update assessment** — After enablement, Azure performs an initial assessment (may take several hours). Review which updates are needed before creating schedules\n\n4. **Create update deployment schedule** — Navigate to Update Management and create a new deployment schedule\n\n5. **Specify classifications and schedule** — Select update classifications (Critical, Security, etc.) and set the recurrence (weekly on Sundays at 2:00 AM). Optionally configure pre/post scripts and maintenance windows\n\n**Note:** Azure Update Management is now part of Azure Update Manager (the evolution of the original Update Management solution). The process is similar but the UI has been modernized.",
+    "category": "Deploy and Manage Azure Compute Resources"
+}
