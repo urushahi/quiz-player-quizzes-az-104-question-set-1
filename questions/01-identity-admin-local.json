@@ -1,6 +1,6 @@
 {
     "id": "az104-identity-admin-local",
-    "question": "Your organization, NovaBright Solutions, has an Microsoft Entra tenant named novabright.io. The tenant has the following configuration:\n\n- **Users may join devices to Microsoft Entra ID**: set to `DeviceAdmin1`\n- **Additional local administrators on Microsoft Entra ID joined devices**: set to `None`\n\nA user named DeviceAdmin1 joins a Windows 11 device named Workstation5 to novabright.io. Another user named CloudAdmin1 has the **Global Administrator** role.\n\nYou need to identify which users are members of the local Administrators group on Workstation5.\n\nWhich users are local administrators?",
+    "question": "My organization, NovaBright Solutions, has an Microsoft Entra tenant named novabright.io. The tenant has the following configuration:\n\n- **Users may join devices to Microsoft Entra ID**: set to `DeviceAdmin1`\n- **Additional local administrators on Microsoft Entra ID joined devices**: set to `None`\n\nA user named DeviceAdmin1 joins a Windows 11 device named Workstation5 to novabright.io. Another user named CloudAdmin1 has the **Global Administrator** role.\n\nYou need to identify which users are members of the local Administrators group on Workstation5.\n\nWhich users are local administrators?",
     "options": [
         {
             "text": "DeviceAdmin1 only",
